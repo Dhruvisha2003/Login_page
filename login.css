@@ -57,9 +57,8 @@ input[type='text']{
     background-color: rgba(0, 128, 0, 0.804);
     border: 2px solid rgba(0, 128, 0, 0.804);
 }
-p{
-    color: royalblue;
+.link{
     position: absolute;
-    left: 36%;
-    top: 90%;
+    top: 89%;
+    left: 35%;
 }
