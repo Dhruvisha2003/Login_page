@@ -18,13 +18,10 @@ h3{
     font-family: "Rubik", sans-serif;
     color: rgba(255, 255, 255, 0.219);
     font-weight: 800;
-    position: absolute;
-    top: 10%;
-    left: 29%;
 }
 .register{
     width: 600px;
-    height: 600px;
+    height: 350px;
     position: absolute;
     top: 15%;
     left: 25%;
@@ -44,7 +41,7 @@ input[type='text']{
 .button{
     display: flex;
     position: absolute;
-    top: 80%;
+    top: 75%;
     left: 40%;
     padding-inline: 40px;
     padding-block: 10px;
