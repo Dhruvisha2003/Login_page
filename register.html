@@ -1,46 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registration-Page</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="icon" href="https://thumbs.dreamstime.com/z/flower-lotus-icon-vector-illustration-flat-design-black-isolated-white-background-simple-logo-171861440.jpg">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="icon"
+      href="https://thumbs.dreamstime.com/z/flower-lotus-icon-vector-illustration-flat-design-black-isolated-white-background-simple-logo-171861440.jpg"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
     <div class="page">
-        <div class="contain">
-            <div class="registration-page">
-                <div class="">
-                    <h3 class="text-5xl">REGISTRATION PAGE</h3>
-                </div>
-                <div class="register mt-5">
-                    <form action="">
-                        <input type="text" name="" id="" placeholder="Enter First-Name Here....">
-                        <input type="text" name="" id="" placeholder="Enter Last-Name Here....">
-                        <input type="text" name="" id="" placeholder="Enter Your Email Here....">
-                        <input type="text" name="" id="" placeholder="Enter Your Password Here....">
-                        <input type="text" name="" id="" placeholder="Enter Your Confirm Password Here....">
-                        <button class="button">Register</button>
-                        <div class="">
-                            <p><a href="login.html">Already have an account?</a></p>
-                        </div>
-                    </form>
-                </div>
+      <div class="contain">
+        <div class="registration-page">
+          <div class="errors">
+            <div class="err_msg first_name_err" role="alert">
+              <div>
+                <i
+                  class="fa-solid fa-circle-exclamation"
+                  style="color: rgb(201, 30, 30)"
+                ></i>
+                First-Name is Required
+              </div>
             </div>
+            <div class="err_msg last_name_err" role="alert">
+              <div>
+                <i
+                  class="fa-solid fa-circle-exclamation"
+                  style="color: rgb(201, 30, 30)"
+                ></i>
+                Last-Name is Required
+              </div>
+            </div>
+            <div class="err_msg email_err" role="alert">
+              <div>
+                <i
+                  class="fa-solid fa-circle-exclamation"
+                  style="color: rgb(201, 30, 30)"
+                ></i>
+                Email is Required
+              </div>
+            </div>
+            <div class="err_msg pass_err" role="alert">
+              <div>
+                <i
+                  class="fa-solid fa-circle-exclamation"
+                  style="color: rgb(201, 30, 30)"
+                ></i>
+                Password is Required
+              </div>
+            </div>
+            <div class="err_msg plength-err" role="alert">
+              <div>
+                <i
+                  class="fa-solid fa-circle-exclamation"
+                  style="color: rgb(201, 30, 30)"
+                ></i>
+                Password must be 8 characters long
+              </div>
+            </div>
+            <div class="err_msg cpass_err" role="alert">
+              <div>
+                <i
+                  class="fa-solid fa-circle-exclamation"
+                  style="color: rgb(201, 30, 30)"
+                ></i>
+                Confirm Password is Required
+              </div>
+            </div>
+            <div class="err_msg cpass-equal" role="alert"></div>
+          </div>
+          <div class="">
+            <h3 class="text-5xl">REGISTRATION PAGE</h3>
+          </div>
+          <div class="register mt-5">
+            <form action="" id="frm">
+              <input
+                type="text"
+                name=""
+                id="first-name"
+                placeholder="Enter First-Name Here...."
+              />
+              <input
+                type="text"
+                name=""
+                id="last-name"
+                placeholder="Enter Last-Name Here...."
+              />
+              <input
+                type="text"
+                name=""
+                id="email"
+                placeholder="Enter Your Email Here...."
+              />
+              <input
+                type="password"
+                name=""
+                id="pass"
+                placeholder="Enter Your Password Here...."
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-])$"
+              />
+              <!-- <i
+                class="fa-regular fa-eye icon"
+                style="color: #ffffffb4; display: none"
+              ></i> -->
+              <i
+                class="fa-regular fa-eye-slash icon_slash"
+                style="color: #ffffffb4"
+              ></i>
+              <input
+                type="password"
+                name=""
+                id="cpass"
+                placeholder="Enter Your Confirm Password Here...."
+              />
+              <!-- <i
+                class="fa-regular fa-eye icon1"
+                style="color: #ffffffb4; display: none"
+              ></i> -->
+              <i
+                class="fa-regular fa-eye-slash icon_slash1"
+                style="color: #ffffffb4"
+              ></i>
+              <button class="button">Register</button>
+              <div class="">
+                <p><a href="login.html">Already have an account?</a></p>
+              </div>
+            </form>
+          </div>
         </div>
+      </div>
     </div>
-   
 
     <script>
-        const btn = document.querySelector('.button');
+      $(document).ready(function () {
+        $("#frm").submit(function (event) {
+          event.preventDefault();
+          var first_name1 = $("#first-name").val();
+          var last_name1 = $("#last-name").val();
+          var email1 = $("#email").val();
+          var pass1 = $("#pass").val();
+          var cpass1 = $("#cpass").val();
 
+          if (first_name1 == "") {
+            $(".first_name_err").css("display", "block");
+          } else {
+            $(".first_name_err").css("display", "none");
+          }
+
+          if (last_name1 == "") {
+            $(".last_name_err").css("display", "block");
+          } else {
+            $(".last_name_err").css("display", "none");
+          }
+
+          if (email1 == "") {
+            $(".email_err").css("display", "block");
+          } else {
+            $(".email_err").css("display", "none");
+          }
+
+          if (pass1 == "") {
+            $(".pass_err").css("display", "block");
+            $(".plength-err").css("display", "none");
+          } else if (pass1.length < 8) {
+            $(".pass_err").css("display", "none");
+            $(".plength-err").css("display", "block");
+          } else {
+            $(".pass_err").css("display", "none");
+            $(".plength-err").css("display", "none");
+          }
+
+          if (cpass1 == "") {
+            $(".cpass_err").css("display", "block");
+          } else {
+            $(".cpass_err").css("display", "none");
+          }
+          if (cpass1 !== pass1) {
+            $(".cpass-equal").css("display", "none");
+          } else {
+            $(".cpass-equal").css("display", "block");
+          }
+        });
+
+        // $(".icon_slash").click(function () {
+        //   var pass2 = $("#pass");
+        //   // var eye_icon1 = $('.icon');
+        //   // var eye_icon_slash1 = $('.icon_slash');
+        //   // var eye_icon1_1 = $('.icon1');
+        //   // var eye_icon_slash1_1 = $('.icon_slash1');
+
+        //   if (pass2.attr("type") === "password") {
+        //     pass2.attr("type", "text");
+        //     $(".icon").css("display", "inline-block");
+        //     $(".icon_slash").css("display", "none");
+        //   }
+        //   if (pass2.attr("type") === "text") {
+        //     pass2.attr("type", "password");
+        //     $(".icon").css("display", "none");
+        //     $(".icon_slash").css("display", "inline-block");
+        //   }
+        // });
+      });
+
+      const passwordField = document.getElementById("pass");
+    //   var eye_icon1 = document.querySelector(".icon");
+      var eye_icon_slash1 = document.querySelector(".icon_slash");
+    //   var eye_icon1_1 = document.querySelector(".icon1");
+      var eye_icon_slash1_1 = document.querySelector(".icon_slash1");
+
+      eye_icon_slash1.addEventListener("click", function () {
+        if (passwordField.type === "password") {
+          passwordField.type = "text";
+          togglePassword.classList.remove("fa-eye-slash");
+          togglePassword.classList.add("fa-eye");
+        } else {
+          passwordField.type = "password";
+          togglePassword.classList.remove("fa-eye");
+          togglePassword.classList.add("fa-eye-slash");
+        }
+      });
     </script>
-</body>
-
-
+  </body>
 </html>
