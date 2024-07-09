@@ -86,60 +86,22 @@
                 Confirm Password is Required
               </div>
             </div>
-            <div class="err_msg cpass-equal" role="alert"></div>
+            <!-- <div class="err_msg cpass-equal" role="alert"></div> -->
           </div>
           <div class="">
             <h3 class="text-5xl">REGISTRATION PAGE</h3>
           </div>
           <div class="register mt-5">
             <form action="" id="frm">
-              <input
-                type="text"
-                name=""
-                id="first-name"
-                placeholder="Enter First-Name Here...."
-              />
-              <input
-                type="text"
-                name=""
-                id="last-name"
-                placeholder="Enter Last-Name Here...."
-              />
-              <input
-                type="text"
-                name=""
-                id="email"
-                placeholder="Enter Your Email Here...."
-              />
-              <input
-                type="password"
-                name=""
-                id="pass"
-                placeholder="Enter Your Password Here...."
-                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-])$"
-              />
-              <!-- <i
-                class="fa-regular fa-eye icon"
-                style="color: #ffffffb4; display: none"
-              ></i> -->
-              <i
-                class="fa-regular fa-eye-slash icon_slash"
-                style="color: #ffffffb4"
-              ></i>
-              <input
-                type="password"
-                name=""
-                id="cpass"
-                placeholder="Enter Your Confirm Password Here...."
-              />
-              <!-- <i
-                class="fa-regular fa-eye icon1"
-                style="color: #ffffffb4; display: none"
-              ></i> -->
-              <i
-                class="fa-regular fa-eye-slash icon_slash1"
-                style="color: #ffffffb4"
-              ></i>
+              <input type="text" name="" id="first-name" placeholder="Enter First-Name Here...."/>
+              <input type="text"name="" id="last-name"placeholder="Enter Last-Name Here...."/>
+              <input type="text" name="" id="email" placeholder="Enter Your Email Here...." />
+              <input type="password" name="" id="pass" placeholder="Enter Your Password Here...." pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-])$" />
+              <i class="fa-regular fa-eye icon" style="color: #ffffffb4; display: none" ></i>
+              <i class="fa-regular fa-eye-slash icon_slash" style="color: #ffffffb4"></i>
+              <input type="password" name="" id="cpass" placeholder="Enter Your Confirm Password Here...."/>
+              <i class="fa-regular fa-eye icon1" style="color: #ffffffb4; display: none"></i>
+              <i class="fa-regular fa-eye-slash icon_slash1" style="color: #ffffffb4"></i>
               <button class="button">Register</button>
               <div class="">
                 <p><a href="login.html">Already have an account?</a></p>
@@ -188,6 +150,11 @@
             $(".pass_err").css("display", "none");
             $(".plength-err").css("display", "none");
           }
+          if (!/[a-z]/.test(pass1)) {
+            $("#pval1-err").css("display", "block");
+          } else {
+            $("#pval1-err").css("display", "none");
+          }
 
           if (cpass1 == "") {
             $(".cpass_err").css("display", "block");
@@ -195,49 +162,63 @@
             $(".cpass_err").css("display", "none");
           }
           if (cpass1 !== pass1) {
-            $(".cpass-equal").css("display", "none");
-          } else {
             $(".cpass-equal").css("display", "block");
+          } else {
+            $(".cpass-equal").css("display", "none");
           }
         });
 
-        // $(".icon_slash").click(function () {
-        //   var pass2 = $("#pass");
-        //   // var eye_icon1 = $('.icon');
-        //   // var eye_icon_slash1 = $('.icon_slash');
-        //   // var eye_icon1_1 = $('.icon1');
-        //   // var eye_icon_slash1_1 = $('.icon_slash1');
-
-        //   if (pass2.attr("type") === "password") {
-        //     pass2.attr("type", "text");
-        //     $(".icon").css("display", "inline-block");
-        //     $(".icon_slash").css("display", "none");
-        //   }
-        //   if (pass2.attr("type") === "text") {
-        //     pass2.attr("type", "password");
-        //     $(".icon").css("display", "none");
-        //     $(".icon_slash").css("display", "inline-block");
-        //   }
-        // });
+        $(".icon_slash").click(function () {
+          var pass2 = $("#pass");
+          if (pass2.attr("type") === "password") {
+            pass2.attr("type", "text");
+            $(".icon").css("display", "block");
+            $(".icon_slash").css("display", "none");
+          } 
+        });
+        $(".icon").click(function () {
+          var pass2 = $("#pass");
+          if (pass2.attr("type") === "text") {
+            pass2.attr("type", "password");
+            $(".icon").css("display", "none");
+            $(".icon_slash").css("display", "block");
+          } 
+        });
+        $(".icon_slash1").click(function () {
+          var pass2 = $("#pass");
+          if (pass2.attr("type") === "password") {
+            pass2.attr("type", "text");
+            $(".icon1").css("display", "block");
+            $(".icon_slash1").css("display", "none");
+          } 
+        });
+        $(".icon1").click(function () {
+          var pass2 = $("#pass");
+          if (pass2.attr("type") === "text") {
+            pass2.attr("type", "password");
+            $(".icon1").css("display", "none");
+            $(".icon_slash1").css("display", "block");
+          } 
+        });
       });
 
-      const passwordField = document.getElementById("pass");
-    //   var eye_icon1 = document.querySelector(".icon");
-      var eye_icon_slash1 = document.querySelector(".icon_slash");
-    //   var eye_icon1_1 = document.querySelector(".icon1");
-      var eye_icon_slash1_1 = document.querySelector(".icon_slash1");
+      // const passwordField = document.getElementById("pass");
+      // // var eye_icon1 = document.querySelector(".icon");
+      // var eye_icon_slash1 = document.querySelector(".icon_slash");
+      // // var eye_icon1_1 = document.querySelector(".icon1");
+      // // var eye_icon_slash1_1 = document.querySelector(".icon_slash1");
 
-      eye_icon_slash1.addEventListener("click", function () {
-        if (passwordField.type === "password") {
-          passwordField.type = "text";
-          togglePassword.classList.remove("fa-eye-slash");
-          togglePassword.classList.add("fa-eye");
-        } else {
-          passwordField.type = "password";
-          togglePassword.classList.remove("fa-eye");
-          togglePassword.classList.add("fa-eye-slash");
-        }
-      });
+      // eye_icon_slash1.addEventListener("click", function () {
+      //   if (passwordField.type === "password") {
+      //     passwordField.type = "text";
+      //     eye_icon_slash1.classList.remove("icon-slash");
+      //     eye_icon_slash1.classList.add("icon");
+      //   } else {
+      //     passwordField.type = "password";
+      //     eye_icon_slash1.classList.remove("icon");
+      //     eye_icon_slash1.classList.add("icon-slash");
+      //   }
+      // });
     </script>
   </body>
 </html>
