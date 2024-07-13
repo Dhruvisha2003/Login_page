@@ -24,7 +24,7 @@ h3{
 }
 .register{
     width: 600px;
-    height: 600px;
+    height: 650px;
     position: absolute;
     top: 15%;
     left: 25%;
@@ -37,7 +37,7 @@ input[type='text'],input[type='password']{
     padding: 18px;
     background-color: rgba(128, 128, 128, 0.274);
     border-radius: 15px;
-    margin-top: 30px;
+    /* margin-top: 10px; */
     margin-inline: 40px;
     color: rgba(220, 220, 220, 0.664);
 }
@@ -65,22 +65,22 @@ p{
 }
 .icon{
     position: absolute;
-    top: 54%;
+    top: 50%;
     right: 14%;
 }
 .icon_slash{
     position: absolute;
-    top: 54%;
+    top: 50%;
     right: 14%;
 }
 .icon1{
     position: absolute;
-    top: 69%;
+    top: 63%;
     right: 14%;
 }
 .icon_slash1{
     position: absolute;
-    top: 69%;
+    top: 63%;
     right: 14%;
 }
 .err_msg{
