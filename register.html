@@ -31,63 +31,6 @@
     <div class="page">
       <div class="contain">
         <div class="registration-page">
-          <div class="errors">
-            <div class="err_msg first_name_err" role="alert">
-              <div>
-                <i
-                  class="fa-solid fa-circle-exclamation"
-                  style="color: rgb(201, 30, 30)"
-                ></i>
-                First-Name is Required
-              </div>
-            </div>
-            <div class="err_msg last_name_err" role="alert">
-              <div>
-                <i
-                  class="fa-solid fa-circle-exclamation"
-                  style="color: rgb(201, 30, 30)"
-                ></i>
-                Last-Name is Required
-              </div>
-            </div>
-            <div class="err_msg email_err" role="alert">
-              <div>
-                <i
-                  class="fa-solid fa-circle-exclamation"
-                  style="color: rgb(201, 30, 30)"
-                ></i>
-                Email is Required
-              </div>
-            </div>
-            <div class="err_msg pass_err" role="alert">
-              <div>
-                <i
-                  class="fa-solid fa-circle-exclamation"
-                  style="color: rgb(201, 30, 30)"
-                ></i>
-                Password is Required
-              </div>
-            </div>
-            <div class="err_msg plength-err" role="alert">
-              <div>
-                <i
-                  class="fa-solid fa-circle-exclamation"
-                  style="color: rgb(201, 30, 30)"
-                ></i>
-                Password must be 8 characters long
-              </div>
-            </div>
-            <div class="err_msg cpass_err" role="alert">
-              <div>
-                <i
-                  class="fa-solid fa-circle-exclamation"
-                  style="color: rgb(201, 30, 30)"
-                ></i>
-                Confirm Password is Required
-              </div>
-            </div>
-            <!-- <div class="err_msg cpass-equal" role="alert"></div> -->
-          </div>
           <div class="">
             <h3 class="text-5xl">REGISTRATION PAGE</h3>
           </div>
@@ -114,59 +57,6 @@
 
     <script>
       $(document).ready(function () {
-        $("#frm").submit(function (event) {
-          event.preventDefault();
-          var first_name1 = $("#first-name").val();
-          var last_name1 = $("#last-name").val();
-          var email1 = $("#email").val();
-          var pass1 = $("#pass").val();
-          var cpass1 = $("#cpass").val();
-
-          if (first_name1 == "") {
-            $(".first_name_err").css("display", "block");
-          } else {
-            $(".first_name_err").css("display", "none");
-          }
-
-          if (last_name1 == "") {
-            $(".last_name_err").css("display", "block");
-          } else {
-            $(".last_name_err").css("display", "none");
-          }
-
-          if (email1 == "") {
-            $(".email_err").css("display", "block");
-          } else {
-            $(".email_err").css("display", "none");
-          }
-
-          if (pass1 == "") {
-            $(".pass_err").css("display", "block");
-            $(".plength-err").css("display", "none");
-          } else if (pass1.length < 8) {
-            $(".pass_err").css("display", "none");
-            $(".plength-err").css("display", "block");
-          } else {
-            $(".pass_err").css("display", "none");
-            $(".plength-err").css("display", "none");
-          }
-          if (!/[a-z]/.test(pass1)) {
-            $("#pval1-err").css("display", "block");
-          } else {
-            $("#pval1-err").css("display", "none");
-          }
-
-          if (cpass1 == "") {
-            $(".cpass_err").css("display", "block");
-          } else {
-            $(".cpass_err").css("display", "none");
-          }
-          if (cpass1 !== pass1) {
-            $(".cpass-equal").css("display", "block");
-          } else {
-            $(".cpass-equal").css("display", "none");
-          }
-        });
 
         $(".icon_slash").click(function () {
           var pass2 = $("#pass");
@@ -185,17 +75,17 @@
           } 
         });
         $(".icon_slash1").click(function () {
-          var pass2 = $("#pass");
-          if (pass2.attr("type") === "password") {
-            pass2.attr("type", "text");
+          var cpass1 = $("#cpass");
+          if (cpass1.attr("type") === "password") {
+            cpass1.attr("type", "text");
             $(".icon1").css("display", "block");
             $(".icon_slash1").css("display", "none");
           } 
         });
         $(".icon1").click(function () {
-          var pass2 = $("#pass");
-          if (pass2.attr("type") === "text") {
-            pass2.attr("type", "password");
+          var cpass1 = $("#cpass");
+          if (cpass1.attr("type") === "text") {
+            cpass1.attr("type", "password");
             $(".icon1").css("display", "none");
             $(".icon_slash1").css("display", "block");
           } 
