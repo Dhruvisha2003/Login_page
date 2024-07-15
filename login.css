@@ -32,7 +32,7 @@ h3{
     box-shadow: 2px 2px 10px black;
     background-color: rgba(23, 23, 82, 0.185);
 }
-input[type='text']{
+input[type='text'],input[type='password']{
     width: 500px;
     padding: 18px;
     background-color: rgba(128, 128, 128, 0.274);
@@ -40,6 +40,14 @@ input[type='text']{
     margin-top: 30px;
     margin-inline: 40px;
     color: rgba(220, 220, 220, 0.664);
+}
+input[type='text']:focus{
+    border: 2px solid rgba(0, 128, 0, 0.872);
+    outline: thick;
+}
+input[type='password']:focus{
+    border: 2px solid rgba(0, 128, 0, 0.872);
+    outline: 100px;  
 }
 .button{
     display: flex;
@@ -62,4 +70,25 @@ p{
     position: absolute;
     left: 39%;
     top:88%;
+}
+.msg{
+    background-color: lightskyblue;
+    font-weight: 600;
+    font-size: 17px;
+    padding: 15px;
+    width: 650px;
+    border-radius: 10px;
+    border: 1px solid rgb(58, 165, 200);
+    margin: auto;
+    display: none;
+}
+.icon{
+    position: absolute;
+    top: 47%;
+    right: 14%;
+}
+.icon_slash{
+    position: absolute;
+    top: 47%;
+    right: 14%;
 }

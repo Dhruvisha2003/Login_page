@@ -30,13 +30,17 @@
   <body>
     <div class="page">
       <div class="contain">
+        <div class="msg" role="alert">
+          Register Successfully Complete!!
+        </div>
         <div class="registration-page">
           <div class="">
             <h3 class="text-5xl">REGISTRATION PAGE</h3>
           </div>
           <div class="register mt-5">
+           
             <form action="" id="frm">
-              <input type="text" class="mt-5" name="" id="first-name" placeholder="Enter First-Name Here...."/><br><br>
+              <input type="text" class="mt-5" name="" id="first-name" placeholder="Enter First-Name Here...."/><br/><br>
               <input type="text"name="" id="last-name"placeholder="Enter Last-Name Here...."/><br><br>
               <input type="text" name="" id="email" placeholder="Enter Your Email Here...." /><br><br>
               <input type="password" name="" id="pass" placeholder="Enter Your Password Here...." pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-])$" /><br><br>
@@ -57,6 +61,38 @@
 
     <script>
       $(document).ready(function () {
+        $('#frm').submit(function(event){
+          event.preventDefault();
+          var first_name = $('#first-name').val();
+          var last_name = $('#last-name').val();
+          var email = $('#email').val();
+          var pass = $('#pass').val();
+          var cpass = $('#cpass').val();
+
+          if(first_name == ''){
+            $('#first-name').focus()
+            $(':focus').css('border-color','red')
+          }
+          if(last_name == ''){
+            $('#last-name').focus()
+            $(':focus').css('border-color','red')
+          }
+          if(email == ''){
+            $('#email').focus()
+            $(':focus').css('border-color','red')
+          }
+          if(pass == ''){
+            $('#pass').focus()
+            $(':focus').css('border-color','red')
+          }
+          if(cpass == ''){
+            $('#cpass').focus()
+            $(':focus').css('border-color','red')
+          }
+          if(first_name != '' && last_name != '' && email != '' && pass != '' && cpass != ''){
+            $('.msg').css('display','block')
+          }
+        })
 
         $(".icon_slash").click(function () {
           var pass2 = $("#pass");

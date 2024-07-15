@@ -24,7 +24,7 @@ h3{
 }
 .register{
     width: 600px;
-    height: 650px;
+    height: 630px;
     position: absolute;
     top: 15%;
     left: 25%;
@@ -40,6 +40,14 @@ input[type='text'],input[type='password']{
     /* margin-top: 10px; */
     margin-inline: 40px;
     color: rgba(220, 220, 220, 0.664);
+}
+input[type='text']:focus{
+    border: 2px solid rgba(0, 128, 0, 0.872);
+    outline: thick;
+}
+input[type='password']:focus{
+    border: 2px solid rgba(0, 128, 0, 0.872);
+    outline: 100px;  
 }
 .button{
     display: flex;
@@ -65,30 +73,30 @@ p{
 }
 .icon{
     position: absolute;
-    top: 50%;
+    top: 51%;
     right: 14%;
 }
 .icon_slash{
     position: absolute;
-    top: 50%;
+    top: 51%;
     right: 14%;
 }
 .icon1{
     position: absolute;
-    top: 63%;
+    top: 64%;
     right: 14%;
 }
 .icon_slash1{
     position: absolute;
-    top: 63%;
+    top: 64%;
     right: 14%;
 }
-.err_msg{
+.msg{
     background-color: lightskyblue;
     font-weight: 600;
     font-size: 17px;
-    padding: 5px;
-    width: 600px;
+    padding: 15px;
+    width: 650px;
     border-radius: 10px;
     border: 1px solid rgb(58, 165, 200);
     margin: auto;

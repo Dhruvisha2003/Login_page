@@ -29,25 +29,34 @@
   <body>
     <div class="page">
       <div class="contain">
+        <div class="msg" role="alert">Login Successfully Complete!!</div>
         <div class="registration-page">
           <div class="heading flex items-center">
             <h3 class="text-5xl">LOGIN PAGE</h3>
           </div>
           <div class="register mt-5">
-            <form action="">
+            <form action="" id="frm1">
               <input
                 class="mt-5"
                 type="text"
                 name=""
-                id=""
+                id="email"
                 placeholder="Enter Your Email Here...."
               />
               <input
-                type="text"
+                type="password"
                 name=""
-                id=""
+                id="password"
                 placeholder="Enter Your Password Here...."
               />
+              <i
+                class="fa-regular fa-eye icon"
+                style="color: #ffffffb4; display: none"
+              ></i>
+              <i
+                class="fa-regular fa-eye-slash icon_slash"
+                style="color: #ffffffb4"
+              ></i>
               <button class="button">Login</button>
               <div class="">
                 <p><a href="register.html">Don't have account?</a></p>
@@ -57,5 +66,45 @@
         </div>
       </div>
     </div>
+
+    <script>
+      $(document).ready(function () {
+        $("#frm1").submit(function (event) {
+          event.preventDefault();
+          var email = $("#email").val();
+          var password = $("#password").val();
+
+          if (email == "") {
+            $("#email").focus();
+            $(":focus").css("border-color", "red");
+          }
+          if (password == "") {
+            $("#password").focus();
+            $(":focus").css("border-color", "red");
+          }
+
+          if (email != "" && pass != "") {
+            $(".msg").css("display", "block");
+          }
+        });
+
+        $(".icon_slash").click(function () {
+          var pass2 = $("#password");
+          if (pass2.attr("type") === "password") {
+            pass2.attr("type", "text");
+            $(".icon").css("display", "block");
+            $(".icon_slash").css("display", "none");
+          }
+        });
+        $(".icon").click(function () {
+          var pass2 = $("#password");
+          if (pass2.attr("type") === "text") {
+            pass2.attr("type", "password");
+            $(".icon").css("display", "none");
+            $(".icon_slash").css("display", "block");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
